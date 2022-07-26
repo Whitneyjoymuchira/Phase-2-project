@@ -1,11 +1,17 @@
-import logo from './logo.svg';
+import react from 'react';
 import './App.css';
+import Error from './Components/Error';
+import Home from './Components/Home';
+import { Room } from './Components/Room';
+import SingleRooms from './Components/SingleRooms';
 
 function App() {
   return (
     <div className="App">
-
-          Learn React
+<Error />
+<Home/>
+<Room />
+<SingleRooms />
       
     </div>
   );
