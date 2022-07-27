@@ -1,7 +1,7 @@
 import React from 'react'
-
+import Hero from './Hero'
 export default function Error() {
   return (
-    <h1>Nothing  to show here!</h1>
+    <Hero/>
   )
 }
