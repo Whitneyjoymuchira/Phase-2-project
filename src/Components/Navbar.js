@@ -15,12 +15,21 @@ export default class Navbar extends Component {
 </Link>
 {/*  Toggle button for media screen*/}
 <button type='button' className='nav-btn'
-OnClick={this.handleToggle}>
+onClick={this.handleToggle}>
     
     <FaAlignRight className='Nav-icon'/>
 </button>
               </div>
-
+              <ul
+            className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
+          >
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Rooms">Rooms</Link>
+            </li>
+          </ul>
           </div>
       </nav>
     )
