@@ -5,7 +5,6 @@ import Home from './Home';
 import {Room} from './Room';
 import SingleRooms from './SingleRooms';
 import Switch, { BrowserRouter } from 'react-router-dom'
-
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 
