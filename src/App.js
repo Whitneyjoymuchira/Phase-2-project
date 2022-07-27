@@ -1,22 +1,29 @@
 import react from 'react';
 import './App.css';
-import Error from './Components/Error';
-import Home from './Components/Home';
-import {Room} from './Components/Room';
-import SingleRooms from './Components/SingleRooms';
+import Error from './Error';
+import Home from './Home';
+import {Room} from './Room';
+import SingleRooms from './SingleRooms';
+import Switch, { BrowserRouter } from 'react-router-dom'
 
-import { BrowserRouter as Router, Route, Routes,Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Navbar from './Components/Navbar';
 
 function App() {
  
   return (
-    <>
+    
+   <>
+   <Navbar />
     <Routes>
     <Route  exact path="/" element={<Home />} />
    <Route exact path='/room/:roomsy' element={<SingleRooms />} />
    <Route exact path='/room/' element={<Room/>} />
+   <Route  exact path ='*'element={<Error/>} />
    </Routes>
-</>
+   </>
+   
+
 
 
 
