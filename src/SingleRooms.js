@@ -5,7 +5,7 @@ import Banner from './Components/Banner'
 import { Link } from 'react-router-dom'
 import { RoomContext } from './context'
 
-import StyledHero from "../components/StyledHero";
+import StyledHero from './Components/StyledHero'
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
