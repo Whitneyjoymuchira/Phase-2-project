@@ -6,6 +6,7 @@ import Title from "./Title";
 
 export default class FeaturedRooms extends Component {
     static contextType = RoomContext;
+    
     render() {
       // const value = this.context;
       let { loading, featuredRooms: rooms } = this.context;

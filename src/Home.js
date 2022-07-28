@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Services from './Components/Services'
 import FeaturedRooms from './Components/FeaturedRooms'
 import StyledHero from './Components/StyledHero'
+import RoomsFilter from './Components/RoomsFilter'
 export default function Home() {
   return (
     <div>
@@ -13,10 +14,11 @@ export default function Home() {
 <Link to="/Rooms" className='btn-primary'>
   Our rooms
 </Link>
-          </Banner>
-        </Hero>
-        <Services />
-        <FeaturedRooms/>
+</Banner>
+      </Hero>
+      <Services></Services>
+      <FeaturedRooms />
+        
     </div>
   )
 }
