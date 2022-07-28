@@ -20,6 +20,7 @@ export default [
     sys: {
       id: "1"
     },
+    
     fields: {
       name: "single economy",
       slug: "single-economy",

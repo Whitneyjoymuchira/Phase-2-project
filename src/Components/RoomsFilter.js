@@ -3,12 +3,12 @@ import { useContext } from 'react';
 import { RoomContext } from '../context';
 import Title from './Title';
 
-const getUnique = (items, value) => {
-  return [...new Set(items.map(item => item[value]))];
+//get all unique values
+let getUnique = (items, value) => {
+  return [...new Set(items.map((item) => item[value]))];
 };
-
-const RoomsFilter = ({ rooms }) => {
-  // react hooks
+export default function RoomsFilter({ rooms }) {
+  //getting context by using useContext API
   const context = useContext(RoomContext);
   const {
     handleChange,
@@ -20,58 +20,62 @@ const RoomsFilter = ({ rooms }) => {
     minSize,
     maxSize,
     breakfast,
-    pets
+    pets,
   } = context;
 
-  // get unique types
+  //get Unique type
   let types = getUnique(rooms, "type");
   // add all
   types = ["all", ...types];
-  // map to jsx
+
+  //map to jsx
   types = types.map((item, index) => (
-    <option key={index} value={item}>
+    <option value={item} key={index}>
       {item}
     </option>
   ));
-  // get unique capacity
+  //End of type
+  // Guests
   let people = getUnique(rooms, "capacity");
   people = people.map((item, index) => (
-    <option key={index} value={item}>
+    <option value={item} key={index}>
       {item}
     </option>
   ));
+  //End of Guests
+  // console.log(context);
   return (
     <section className="filter-container">
-      <Title title="search rooms" />
+      <Title title="Search Rooms"></Title>
       <form className="filter-form">
-        {/* select type */}
+        {/* Select Room Type    */}
         <div className="form-group">
           <label htmlFor="type">room type</label>
           <select
             name="type"
             id="type"
-            onChange={handleChange}
-            className="form-control"
             value={type}
+            className="form-control"
+            onChange={handleChange}
           >
             {types}
           </select>
         </div>
-        {/* end of select type */}
-        {/* guests  */}
+        {/* End of Room type    */}
+        {/* Select Guest   */}
         <div className="form-group">
           <label htmlFor="capacity">Guests</label>
           <select
             name="capacity"
             id="capacity"
-            onChange={handleChange}
-            className="form-control"
             value={capacity}
+            className="form-control"
+            onChange={handleChange}
           >
             {people}
           </select>
         </div>
-        {/* end of guests */}
+        {/* End of Guest    */}
         {/* room price */}
         <div className="form-group">
           <label htmlFor="price">room price ${price}</label>
@@ -89,11 +93,12 @@ const RoomsFilter = ({ rooms }) => {
         {/* end of room price*/}
         {/* size */}
         <div className="form-group">
-          <label htmlFor="price">room size </label>
+          <label htmlFor="size">room size (SQFT)</label>
           <div className="size-inputs">
             <input
               type="number"
               name="minSize"
+              id="size"
               value={minSize}
               onChange={handleChange}
               className="size-input"
@@ -101,14 +106,15 @@ const RoomsFilter = ({ rooms }) => {
             <input
               type="number"
               name="maxSize"
+              id="size"
               value={maxSize}
               onChange={handleChange}
               className="size-input"
             />
           </div>
         </div>
-        {/* end of select type */}
-        {/* extras */}
+        {/* end of size */}
+        {/* extras  */}
         <div className="form-group">
           <div className="single-extra">
             <input
@@ -124,16 +130,15 @@ const RoomsFilter = ({ rooms }) => {
             <input
               type="checkbox"
               name="pets"
+              id="pets"
               checked={pets}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">pets</label>
+            <label htmlFor="pets">pets</label>
           </div>
         </div>
-        {/* end of extras type */}
+        {/* end of extras  */}
       </form>
     </section>
   );
-};
-
-export default RoomsFilter;
+}
