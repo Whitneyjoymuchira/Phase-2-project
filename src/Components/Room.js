@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import defaultImg from "/home/whitney/Development/code/phase-2/project2/src/images/room-1.jpeg"
 import PropTypes from "prop-types"
+import { memo } from 'react'
 const Room = memo(({ room }) => {
     const { name, slug, images, price } = room;
     // console.log(name);
