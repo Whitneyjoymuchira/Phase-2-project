@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {FaAlignRight} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import logo from "../src/images/logo.svg"
+import logo from "/home/whitney/Development/code/phase-2/project2/src/images/logo.svg"
 
 export default class Navbar extends Component {
     state={isOpen:false}
@@ -28,7 +28,7 @@ onClick={this.handleToggle}>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/Room">Rooms</Link>
+              <Link to="/Rooms">Rooms</Link>
             </li>
           </ul>
           </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from './Hero'
 import Banner from './Components/Banner'
 import { Link } from 'react-router-dom'
-const Room = () => {
+const Rooms = () => {
   return (
     <Hero hero="roomsHero" >
 <Banner title="Our Rooms">
@@ -11,4 +11,4 @@ const Room = () => {
     </Hero>
   )
 }
-export default Room;
+export default Rooms;
