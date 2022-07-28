@@ -17,7 +17,7 @@ export default function Home() {
 </Banner>
       </Hero>
       <Services></Services>
-      <FeaturedRooms />
+      <FeaturedRooms></FeaturedRooms>
         
     </div>
   )
